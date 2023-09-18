@@ -205,6 +205,7 @@ export async function queryOutput(
 async function _genValidGasLimitAndValue(api: ApiPromise, gasLimitAndValue ? : GasLimitAndValue) : Promise<GasLimitAndValue> {
 	if(gasLimitAndValue == null) {
 		return {
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-ignore
 			gasLimit: api.registry.createType('WeightV2', {
 				refTime: convertWeight(
@@ -221,6 +222,7 @@ async function _genValidGasLimitAndValue(api: ApiPromise, gasLimitAndValue ? : G
 	let { value, gasLimit } = gasLimitAndValue;
 
 	if(!value) value = BN_ZERO;
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
 	if(gasLimit == null) gasLimit = api.registry.createType('WeightV2', {
 		refTime: convertWeight(

@@ -234,6 +234,7 @@ ${event.args.map((arg) => {
 		const composite = type.def.asComposite;
 		const compositeName = type.path[type.path.length - 1]!.toString();
 
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		if (composite.fields.length == 1 && composite.fields[0].typeName == "[u8; 32]") {
 			return new TypeInfo(

@@ -216,6 +216,7 @@ function _genValidGasLimitAndValue(api, gasLimitAndValue) {
         return __generator(this, function (_a) {
             if (gasLimitAndValue == null) {
                 return [2 /*return*/, {
+                        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                         // @ts-ignore
                         gasLimit: api.registry.createType('WeightV2', {
                             refTime: (0, util_2.convertWeight)(api.consts.system.blockWeights
@@ -229,6 +230,7 @@ function _genValidGasLimitAndValue(api, gasLimitAndValue) {
             value = gasLimitAndValue.value, gasLimit = gasLimitAndValue.gasLimit;
             if (!value)
                 value = util_1.BN_ZERO;
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             if (gasLimit == null)
                 gasLimit = api.registry.createType('WeightV2', {
