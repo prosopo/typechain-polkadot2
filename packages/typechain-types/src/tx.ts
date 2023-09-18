@@ -33,7 +33,7 @@ import type { KeyringPair } from '@polkadot/keyring/types';
 import type { Registry } from '@polkadot/types-codec/types';
 import type {ApiPromise, SubmittableResult} from "@polkadot/api";
 // @ts-ignore
-import type {EventRecord} from "@polkadot/api/submittable";
+import type { EventRecord } from '@polkadot/types/interfaces';
 import {TypeTS} from "@727-ventures/typechain-polkadot-parser/src/types/TypeInfo";
 import {convertWeight} from "@polkadot/api-contract/base/util";
 import {Weight, WeightV2} from "@polkadot/types/interfaces";
@@ -62,7 +62,7 @@ export async function txSignAndSend(
 	nativeContract : ContractPromise,
 	keyringPair : KeyringPair,
 	title : string,
-	eventHandler : (event: EventRecord[]) => {
+	eventHandler : (event: EventRecord[][]) => {
 		[index: string]: any;
 	},
 	args ? : readonly RequestArgumentType[],
@@ -124,7 +124,7 @@ export async function _signAndSend(
 	registry: Registry,
 	extrinsic: SubmittableExtrinsic<'promise'>,
 	signer: KeyringPair,
-	eventHandler : (event: EventRecord[]) => {
+	eventHandler : (event: EventRecord[][]) => {
 		[index: string]: any;
 	},
 ): Promise<SignAndSendSuccessResponse> {
