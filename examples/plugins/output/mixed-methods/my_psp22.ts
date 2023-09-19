@@ -14,7 +14,7 @@ import type BN from 'bn.js';
 import {ReturnNumber} from '@727-ventures/typechain-types';
 import {getTypeDescription} from './../shared/utils';
 // @ts-ignore
-import type { EventRecord } from '@polkadot/types/interfaces'
+import type { EventRecord } from '@polkadot/types/interfaces';
 import {decodeEvents} from "../shared/utils";
 
 

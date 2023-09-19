@@ -8,7 +8,7 @@ import { txSignAndSend } from '@727-ventures/typechain-types';
 import type * as ArgumentTypes from '../types-arguments/my_psp22';
 import type BN from 'bn.js';
 // @ts-ignore
-import type { EventRecord } from '@polkadot/types/interfaces'
+import type { EventRecord } from '@polkadot/types/interfaces';
 import {decodeEvents} from "../shared/utils";
 
 
