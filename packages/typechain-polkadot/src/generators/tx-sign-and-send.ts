@@ -21,7 +21,7 @@
 
 import {Abi} from "@polkadot/api-contract";
 import {Import, Method} from "../types";
-import {TypeParser} from "@727-ventures/typechain-polkadot-parser";
+import {TypeParser} from "@prosopo/typechain-polkadot-parser";
 import Handlebars from "handlebars";
 import {writeFileSync} from "../utils/directories";
 import {readTemplate} from "../utils/handlebars-helpers";

@@ -9,8 +9,8 @@
   	"private": true,
 	"scripts": {
 		"publish": "npx lerna publish",
-		"start-typechain": "npx @727-ventures/typechain-polkadot --in ./artifacts --out ./out",
-		"gen-test-ts": "npx @727-ventures/typechain-polkadot --in tests/artifacts --out tests/generated",
+		"start-typechain": "npx @prosopo/typechain-polkadot --in ./artifacts --out ./out",
+		"gen-test-ts": "npx @prosopo/typechain-polkadot --in tests/artifacts --out tests/generated",
 		"only-test": "npx jest --no-cache --maxWorkers 1",
 		"test": "yarn gen-test-ts && yarn only-test",
 		"lint": "eslint \"{packages, examples}/**/*.ts\"",
@@ -18,8 +18,8 @@
 	},
 	"dependencies": {
 		"lerna": "^5.1.8",
-		"@727-ventures/typechain-polkadot": "file:packages/typechain-polkadot",
-		"@727-ventures/typechain-types": "file:packages/typechain-types",
+		"@prosopo/typechain-polkadot": "file:packages/typechain-polkadot",
+		"@prosopo/typechain-types": "file:packages/typechain-types",
 		"@types/bn.js": "^5.1.0",
 		"@types/eslint": "^8.4.3",
 		"@types/jest": "^27.5.2",

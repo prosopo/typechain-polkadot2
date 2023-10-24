@@ -20,9 +20,9 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import {Abi} from "@polkadot/api-contract";
-import {TypeParser} from "@727-ventures/typechain-polkadot-parser";
+import {TypeParser} from "@prosopo/typechain-polkadot-parser";
 import Handlebars from "handlebars";
-import {TypeInfo} from "@727-ventures/typechain-polkadot-parser/src/types/TypeInfo";
+import {TypeInfo} from "@prosopo/typechain-polkadot-parser/src/types/TypeInfo";
 import {readTemplate} from "../utils/handlebars-helpers";
 import {writeFileSync} from "../utils/directories";
 import {TypechainPlugin} from "../types/interfaces";

@@ -9,7 +9,7 @@ Utility package for compiling smart contracts, and generating TypeScript definit
 In your project install this package:
 
 ```bash
-npm i -D @727-ventures/typechain-compiler
+npm i -D @prosopo/typechain-compiler
 ```
 
 Now you can use it to compile smart contracts, and generate TS definitions & runtime code for them. To use typechain-compiler you need to create a config file, and pass it to the compiler.
@@ -37,7 +37,7 @@ Also you can override the config value via CLI arguments.
 To compile your project, and generate TS definitions & runtime code for it, run the following command:
 
 ```bash
-npx @727-ventures/typechain-compiler --config path/to/config.json
+npx @prosopo/typechain-compiler --config path/to/config.json
 ```
 
 Also you can provide additional arguments to the compiler:

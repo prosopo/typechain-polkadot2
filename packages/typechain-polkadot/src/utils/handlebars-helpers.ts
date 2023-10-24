@@ -25,7 +25,7 @@ import Handlebars from "handlebars";
 import toCamelCase from 'camelcase';
 import {Method} from "../types";
 import {Abi} from "@polkadot/api-contract";
-import {TypeTS} from "@727-ventures/typechain-polkadot-parser/src/types/TypeInfo";
+import {TypeTS} from "@prosopo/typechain-polkadot-parser/src/types/TypeInfo";
 import {stringCamelCase} from "@polkadot/util";
 
 /**

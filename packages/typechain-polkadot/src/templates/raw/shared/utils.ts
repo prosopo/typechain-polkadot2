@@ -1,6 +1,6 @@
 import fs from "fs";
 import type {ContractPromise} from "@polkadot/api-contract";
-import {handleEventReturn} from "@727-ventures/typechain-types";
+import {handleEventReturn} from "@prosopo/typechain-types";
 
 export function getTypeDescription(id: number | string, types: any): any {
 	return types[id];

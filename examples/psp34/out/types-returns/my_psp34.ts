@@ -1,5 +1,5 @@
 import type BN from 'bn.js';
-import type {ReturnNumber} from '@727-ventures/typechain-types';
+import type {ReturnNumber} from '@prosopo/typechain-types';
 
 export interface Id {
 	u8 ? : number,

@@ -3,8 +3,8 @@
 import type { ContractPromise } from '@polkadot/api-contract';
 import type { KeyringPair } from '@polkadot/keyring/types';
 import type { ApiPromise } from '@polkadot/api';
-import type { GasLimit, GasLimitAndRequiredValue, Result } from '@727-ventures/typechain-types';
-import { txSignAndSend } from '@727-ventures/typechain-types';
+import type { GasLimit, GasLimitAndRequiredValue, Result } from '@prosopo/typechain-types';
+import { txSignAndSend } from '@prosopo/typechain-types';
 import type * as ArgumentTypes from '../types-arguments/my_psp22';
 import type BN from 'bn.js';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment

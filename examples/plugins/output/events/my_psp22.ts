@@ -2,7 +2,7 @@ import type * as EventTypes from '../event-types/my_psp22';
 import type {ContractPromise} from "@polkadot/api-contract";
 import type {ApiPromise} from "@polkadot/api";
 import {getEventTypeDescription} from "../shared/utils";
-import {handleEventReturn} from "@727-ventures/typechain-types";
+import {handleEventReturn} from "@prosopo/typechain-types";
 
 export default class EventsClass {
 	private __nativeContract : ContractPromise;

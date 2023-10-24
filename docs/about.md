@@ -149,8 +149,8 @@ To dive deeper into configuration, you can check [typechain-compiler documentati
 Add the following to your `package.json`:
 ```json
 "dependencies": {
-	"@727-ventures/typechain-compiler": "^0.5.16",
-	"@727-ventures/typechain-types": "^0.0.22",
+	"@prosopo/typechain-compiler": "^0.5.16",
+	"@prosopo/typechain-types": "^0.0.22",
 	"@types/node": "^17.0.34",
 	"ts-node": "^10.7.0",
 	"typescript": "^4.6.4",
@@ -166,7 +166,7 @@ And install it with `npm install`.
 
 7) Now, let's run `typechain-compiler`:
 ```bash
-$ npx @727-ventures/typechain-compiler --config typechain.config.json
+$ npx @prosopo/typechain-compiler --config typechain.config.json
 ```
 
 8) And now, you can use generated code in your project. For example, you can create a file `index.ts`:
@@ -385,7 +385,7 @@ cargo contract build
 
 2) And now, let's install `typechain-polkadot`:
 ```bash
-$ npm install @727-ventures/typechain-polkadot
+$ npm install @prosopo/typechain-polkadot
 ```
 
 3) Let's create a directory with artifacts:
@@ -406,7 +406,7 @@ $ cp ./contracts/psp22/target/ink/metadata.json artifacts/psp22.json
 
 5) Let's run `typechain-polkadot`:
 ```bash
-$ npx @727-ventures/typechain-polkadot --in ./artifacts --out ./typechain-generated
+$ npx @prosopo/typechain-polkadot --in ./artifacts --out ./typechain-generated
 ```
 
 Wow! We've just generated code for our contracts using typechain directly! 🎉

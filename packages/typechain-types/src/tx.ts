@@ -35,7 +35,7 @@ import type {ApiPromise, SubmittableResult} from "@polkadot/api";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import type { EventRecord } from '@polkadot/types/interfaces';
-import {TypeTS} from "@727-ventures/typechain-polkadot-parser/src/types/TypeInfo";
+import {TypeTS} from "@prosopo/typechain-polkadot-parser/src/types/TypeInfo";
 import {convertWeight} from "@polkadot/api-contract/base/util";
 import {Weight, WeightV2} from "@polkadot/types/interfaces";
 import {BN_HUNDRED, BN_ZERO} from "@polkadot/util";

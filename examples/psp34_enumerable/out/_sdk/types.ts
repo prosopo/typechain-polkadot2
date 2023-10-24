@@ -24,7 +24,7 @@ import BN from 'bn.js';
 // @ts-ignore
 import type { ContractExecResultErr } from '@polkadot/types/interfaces/contracts/types';
 import type {AnyJson} from "@polkadot/types-codec/types";
-import {TypeInfo} from "@727-ventures/typechain-polkadot-parser/src/types/TypeInfo";
+import {TypeInfo} from "@prosopo/typechain-polkadot-parser/src/types/TypeInfo";
 
 export type RequestArgumentType = number | string | boolean | bigint
 	| (string | number)[]
