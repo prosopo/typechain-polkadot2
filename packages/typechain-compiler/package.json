@@ -1,6 +1,7 @@
 {
   "name": "@prosopo/typechain-compiler",
   "version": "1.1.8",
+  "private": false,
   "description": "Util to test and compile your rust project",
   "bin": {
     "typechain-compiler": "bin/index.js"
@@ -45,5 +46,5 @@
   "devDependencies": {
     "typescript": "^4.9.5"
   },
-  "gitHead": "d9d2b7e9d269b509dfd56d9850a6352ca6945743"
+  "gitHead": "24d424b8a25af562432b16218baa7fbf28817c32"
 }

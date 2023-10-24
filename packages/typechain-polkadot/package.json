@@ -1,6 +1,7 @@
 {
   "name": "@prosopo/typechain-polkadot",
   "version": "1.1.5",
+  "private": false,
   "scripts": {
     "start": "ts-node index.ts --in artifacts --out out",
     "lint": "eslint \"{src,tests}/**/*.{js,jsx,ts,tsx}\"",
@@ -61,5 +62,5 @@
   "bugs": {
     "url": "https://github.com/prosopo/typechain-polkadot/issues"
   },
-  "gitHead": "d9d2b7e9d269b509dfd56d9850a6352ca6945743"
+  "gitHead": "24d424b8a25af562432b16218baa7fbf28817c32"
 }
