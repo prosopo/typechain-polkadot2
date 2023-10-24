@@ -34,6 +34,7 @@
     "handlebars": "^4.7.7",
     "prettier": "^2.7.1",
     "ts-node": "^10.7.0",
+    "tslib": "^2.6.2",
     "yargs": "^17.5.1"
   },
   "devDependencies": {
@@ -49,7 +50,7 @@
     "eslint-plugin-node": "^11.1.0",
     "hjson": "^3.2.2",
     "ts-jest": "^28.0.3",
-    "typescript": "^4.7.4"
+    "typescript": "^4.9.5"
   },
   "author": "Supercolony-net",
   "homepage": "https://github.com/prosopo/typechain-polkadot#readme",
@@ -60,5 +61,5 @@
   "bugs": {
     "url": "https://github.com/prosopo/typechain-polkadot/issues"
   },
-  "gitHead": "fe4c3cbc02a1c7f85a0e1fa390bb74b3cb9d6867"
+  "gitHead": "d9d2b7e9d269b509dfd56d9850a6352ca6945743"
 }

@@ -3,10 +3,10 @@
 	"workspaces": [
 		"packages/*"
 	],
-  	"files": [
-	  "tests/**/*"
+	"files": [
+		"tests/**/*"
 	],
-  	"private": true,
+	"private": true,
 	"scripts": {
 		"publish": "npx lerna publish",
 		"start-typechain": "npx @prosopo/typechain-polkadot --in ./artifacts --out ./out",
@@ -17,7 +17,6 @@
 		"lint:fix": "eslint --fix \"{packages, examples}/**/*.ts\""
 	},
 	"dependencies": {
-		"lerna": "^5.1.8",
 		"@prosopo/typechain-polkadot": "file:packages/typechain-polkadot",
 		"@prosopo/typechain-types": "file:packages/typechain-types",
 		"@types/bn.js": "^5.1.0",
@@ -30,8 +29,10 @@
 		"eslint-plugin-import": "^2.26.0",
 		"eslint-plugin-node": "^11.1.0",
 		"hjson": "^3.2.2",
+		"lerna": "^5.1.8",
 		"ts-jest": "^28.0.0",
-		"typescript": "^4.7.4"
+		"tslib": "^2.6.2",
+		"typescript": "^4.9.5"
 	},
 	"resolutions": {
 		"@polkadot/util": "12.2.2"
