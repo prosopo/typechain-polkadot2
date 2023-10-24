@@ -43,7 +43,6 @@
     "yargs": "^17.5.1"
   },
   "devDependencies": {
-    "tsc": "^2.0.4",
     "typescript": "^4.9.5"
   },
   "gitHead": "d9d2b7e9d269b509dfd56d9850a6352ca6945743"
