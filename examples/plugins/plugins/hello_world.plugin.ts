@@ -1,4 +1,4 @@
-import {TypechainPlugin} from '@727-ventures/typechain-polkadot/src/types/interfaces';
+import {TypechainPlugin} from '@prosopo/typechain-polkadot/src/types/interfaces';
 import {Abi} from "@polkadot/api-contract";
 
 export default class HelloWorldPlugin implements TypechainPlugin {

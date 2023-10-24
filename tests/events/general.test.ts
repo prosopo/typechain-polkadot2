@@ -5,7 +5,7 @@ import type {KeyringPair} from "@polkadot/keyring/types";
 import {GetAccounts} from "../config";
 import {IdBuilder} from "../generated/types-returns/my_psp34_events";
 import {IdBuilder as IdBuilderArgs} from "../generated/types-arguments/my_psp34_events";
-import {ReturnNumber} from "@727-ventures/typechain-types";
+import {ReturnNumber} from "@prosopo/typechain-types";
 
 describe("Events", () => {
 	let api: ApiPromise;

@@ -11,7 +11,7 @@ Package for generating TypeScript definitions & runtime code for Polkadot smart 
 In your project install this package:
 
 ```bash
-npm i -D @727-ventures/typechain-polkadot
+npm i -D @prosopo/typechain-polkadot
 ```
 
 Now you can use it to generate TS definitions & runtime code for Polkadot smart contracts. To use typechain-polkadot.
@@ -28,7 +28,7 @@ Typechain can be used in two ways:
 After installing the package, you can use it as a CLI tool. To use it, run the following command:
 
 ```bash
-npx @727-ventures/typechain-polkadot --input path/to/abis --output path/to/output
+npx @prosopo/typechain-polkadot --input path/to/abis --output path/to/output
 ```
 
 ## Methods and namespaces used in the typechain, and their description
@@ -177,7 +177,7 @@ const result = await contract.tx.<functionName>(...args, options)
 You can also use typechain-polkadot as a library. To use it, you need to import it in your code:
 
 ```typescript
-import {Typechain} from '@727-ventures/typechain-polkadot/src/types/typechain';
+import {Typechain} from '@prosopo/typechain-polkadot/src/types/typechain';
 import {testPathPatternToRegExp} from "jest-util";
 
 const typechain = new Typechain();
@@ -209,7 +209,7 @@ Typechain-polkadot uses plugins to generate code. By default, it uses the follow
 You can also create your own plugins to add some custom logic to the typechain-polkadot. To do this, you need to create a class that implements the `TypechainPlugin` interface:
 
 ```typescript
-import {TypechainPlugin} from '@727-ventures/typechain-polkadot/src/types/interfaces';
+import {TypechainPlugin} from '@prosopo/typechain-polkadot/src/types/interfaces';
 import {Abi} from "@polkadot/api-contract";
 
 /**
@@ -244,7 +244,7 @@ typechain.loadPlugins(new MyPlugin());
 Or you can load them via cli:
 
 ```bash
-npx @727-ventures/typechain-polkadot --input path/to/abis --output path/to/output --plugins ./plugins-directory
+npx @prosopo/typechain-polkadot --input path/to/abis --output path/to/output --plugins ./plugins-directory
 ```
 > Note: if you're using the cli, every plugin should end with `.plugin.ts` and have default export of the plugin itself.
 

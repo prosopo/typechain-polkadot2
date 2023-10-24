@@ -3,7 +3,7 @@ import PathAPI from "path";
 import toml from "toml";
 
 /**
- * This package should compile your Rust projects, and generate TypeScript types with {@link @727-ventures/typechain-polkadot}.
+ * This package should compile your Rust projects, and generate TypeScript types with {@link @prosopo/typechain-polkadot}.
  *
  *
  * @packageInfo
