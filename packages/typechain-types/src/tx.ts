@@ -63,7 +63,7 @@ export async function txSignAndSend(
 	nativeContract : ContractPromise,
 	keyringPair : KeyringPair,
 	title : string,
-	eventHandler : (event: EventRecord[][]) => {
+	eventHandler : (event: EventRecord[]) => {
 		[index: string]: any;
 	},
 	args ? : readonly RequestArgumentType[],
@@ -125,7 +125,7 @@ export async function _signAndSend(
 	registry: Registry,
 	extrinsic: SubmittableExtrinsic<'promise'>,
 	signer: KeyringPair,
-	eventHandler : (event: EventRecord[][]) => {
+	eventHandler : (event: EventRecord[]) => {
 		[index: string]: any;
 	},
 ): Promise<SignAndSendSuccessResponse> {
