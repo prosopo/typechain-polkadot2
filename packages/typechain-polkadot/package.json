@@ -1,6 +1,6 @@
 {
   "name": "@prosopo/typechain-polkadot",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "publishConfig": {
     "access": "public"
   },
@@ -27,7 +27,7 @@
     "@polkadot/api": "^10.8.1",
     "@polkadot/api-contract": "^10.8.1",
     "@polkadot/keyring": "^12.2.2",
-    "@prosopo/typechain-polkadot-parser": "^1.0.7",
+    "@prosopo/typechain-polkadot-parser": "^1.0.8",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.11.18",
     "@types/yargs": "^17.0.10",
@@ -41,7 +41,7 @@
     "yargs": "^17.5.1"
   },
   "devDependencies": {
-    "@prosopo/typechain-types": "^1.1.6",
+    "@prosopo/typechain-types": "^1.1.7",
     "@types/bn.js": "^5.1.0",
     "@types/eslint": "^8.4.3",
     "@types/jest": "^27.5.2",
