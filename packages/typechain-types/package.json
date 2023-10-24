@@ -1,7 +1,9 @@
 {
   "name": "@prosopo/typechain-types",
   "version": "1.1.6",
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Types and utility function for TypeChain",
   "repository": {
     "type": "git",
@@ -35,5 +37,5 @@
   "devDependencies": {
     "typescript": "^5.2.2"
   },
-  "gitHead": "d9d2b7e9d269b509dfd56d9850a6352ca6945743"
+  "gitHead": "9a259955310464444257acfd4899f1659e8f7ffe"
 }

@@ -1,7 +1,9 @@
 {
   "name": "@prosopo/typechain-polkadot-parser",
   "version": "1.0.7",
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Parser that can generate typescript definitions from ABI of the contract",
   "scripts": {
     "test": "ts-node index.ts"
@@ -24,7 +26,7 @@
     "camelcase": "^6.3.0",
     "tslib": "^2.6.2"
   },
-  "gitHead": "24d424b8a25af562432b16218baa7fbf28817c32",
+  "gitHead": "9a259955310464444257acfd4899f1659e8f7ffe",
   "devDependencies": {
     "typescript": "^5.2.2"
   }
