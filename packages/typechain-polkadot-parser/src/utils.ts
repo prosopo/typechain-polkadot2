@@ -32,11 +32,13 @@ function __getV3(abiJson: any) {
 
 
 export const parsePrimitiveReturns = (primitive: string): string => {
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
 	return INK_TYPES_TO_TS_RETURNS[primitive];
 };
 
 export const parsePrimitiveArgs = (primitive: string): string => {
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
 	return INK_TYPES_TO_TS_ARGUMENTS[primitive];
 };

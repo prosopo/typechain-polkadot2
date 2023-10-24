@@ -32,6 +32,7 @@ import type {
 import type { KeyringPair } from '@polkadot/keyring/types';
 import type { Registry } from '@polkadot/types-codec/types';
 import type {ApiPromise, SubmittableResult} from "@polkadot/api";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import type { EventRecord } from '@polkadot/types/interfaces';
 import {TypeTS} from "@727-ventures/typechain-polkadot-parser/src/types/TypeInfo";

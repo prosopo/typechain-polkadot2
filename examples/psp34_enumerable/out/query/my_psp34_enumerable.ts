@@ -8,7 +8,8 @@ import { queryJSON, queryOkJSON, handleReturnType } from '@727-ventures/typechai
 import type * as ArgumentTypes from '../types-arguments/my_psp34_enumerable';
 import type * as ReturnTypes from '../types-returns/my_psp34_enumerable';
 import type BN from 'bn.js';
-//@ts-ignore
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import {ReturnNumber} from '@727-ventures/typechain-types';
 import {getTypeDescription} from './../shared/utils';
 import DATA_TYPE_DESCRIPTIONS from '../data/my_psp34_enumerable.json';

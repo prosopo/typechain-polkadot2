@@ -81,26 +81,32 @@ function main() {
 	const config = parseConfig(configStr);
 
 	if (argv.files !== undefined) {
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		config.projectFiles = argv.files;
 	}
 	if (argv.skipLinting !== undefined) {
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		config.skipLinting = argv.skipLinting;
 	}
 	if (argv.artifactsPath !== undefined) {
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		config.artifactsPath = argv.artifactsPath;
 	}
 	if (argv.typechainGeneratedPath !== undefined) {
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		config.typechainGeneratedPath = argv.typechainGeneratedPath;
 	}
 	if (argv.isWorkspace !== undefined) {
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		config.isWorkspace = argv.isWorkspace;
 	}
 	if (argv.workspacePath !== undefined) {
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		config.workspacePath = argv.workspacePath;
 	}

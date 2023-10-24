@@ -43,6 +43,7 @@ describe('MY_PSP34', () => {
 		await tx.mint(UserAlice.address, IdBuilder.U8(resultBefore.valueOf() + 1));
 
 		const resultAfter = ((await query.totalSupply()).value);
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		await expect(resultAfter.valueOf() - resultBefore.valueOf()).toBe(1);
 	});
@@ -55,6 +56,7 @@ describe('MY_PSP34', () => {
 
 		const totalSupply = Number((await (query.totalSupply())).value);
 
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		await tx.mint(UserAlice.address, IdBuilder.U16(totalSupply.valueOf() + 1));
 
@@ -80,6 +82,7 @@ describe('MY_PSP34', () => {
 
 		const totalSupplyAfter = Number((await (query.totalSupply())).value);
 
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		await expect(totalSupplyAfter.valueOf() - totalSupply.valueOf()).toBe(6);
 	});

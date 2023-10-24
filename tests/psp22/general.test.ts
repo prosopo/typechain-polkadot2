@@ -91,6 +91,7 @@ describe("Correctness of the PSP22 contract' methods types", () => {
 
 			throw new Error("Should not be able to transfer more than the balance");
 		} catch (e) {
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-ignore
 			expect(e.error.message).toBe('Module');
 		}
@@ -126,6 +127,7 @@ describe("Correctness of the PSP22 contract' methods types", () => {
 
 			throw new Error("Should not be able to transfer without approval");
 		} catch (e) {
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-ignore
 			expect(e.error.message).toBe('Module');
 		}
