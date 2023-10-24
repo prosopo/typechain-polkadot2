@@ -1,6 +1,6 @@
 {
   "name": "@prosopo/typechain-polkadot-parser",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "Parser that can generate typescript definitions from ABI of the contract",
   "scripts": {
