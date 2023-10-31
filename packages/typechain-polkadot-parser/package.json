@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/prosopo/typechain-polkadot.git"
   },
-  "author": "Supercolony-net",
+  "author": "Prosopo",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/prosopo/typechain-polkadot/issues"

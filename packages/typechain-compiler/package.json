@@ -26,7 +26,7 @@
     "npm": ">=7.0.0"
   },
   "engineStrict": true,
-  "author": "727-Ventures",
+  "author": "Prosopo",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/prosopo/typechain-polkadot/issues"
