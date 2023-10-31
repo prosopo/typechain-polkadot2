@@ -9,6 +9,7 @@
     "typechain-compiler": "bin/index.js"
   },
   "scripts": {
+    "build": "npx tsc",
     "start": "ts-node ./index.ts --config config.json"
   },
   "repository": {

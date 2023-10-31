@@ -6,6 +6,7 @@
   },
   "description": "Parser that can generate typescript definitions from ABI of the contract",
   "scripts": {
+    "build": "npx tsc",
     "test": "ts-node index.ts"
   },
   "repository": {

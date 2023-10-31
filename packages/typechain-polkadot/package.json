@@ -5,6 +5,7 @@
     "access": "public"
   },
   "scripts": {
+    "build": "npx tsc",
     "start": "ts-node index.ts --in artifacts --out out",
     "lint": "eslint \"{src,tests}/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"{src,tests}/**/*.{js,jsx,ts,tsx}\""
