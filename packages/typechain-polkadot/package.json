@@ -55,7 +55,7 @@
     "ts-jest": "^28.0.3",
     "typescript": "^4.9.5"
   },
-  "author": "Supercolony-net",
+  "author": "Prosopo",
   "homepage": "https://github.com/prosopo/typechain-polkadot#readme",
   "repository": {
     "type": "git",
