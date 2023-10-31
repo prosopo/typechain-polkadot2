@@ -1,0 +1,30 @@
+name: tests
+
+on:
+    pull_request:
+        branches: [main]
+        paths:
+            - 'packages/**'
+            - '.github/workflows/tests.yml'
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
+
+env:
+    CARGO_TERM_COLOR: always
+    GH_TOKEN: ${{ github.token }}
+    NODE_ENV: test
+
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        steps:
+            # Checkout the repo
+            - uses: actions/checkout@v3
+
+            - run: npm install -g npm@8.9
+            - run: npm install
+
+            # build all packages in workspace
+            - run: npm run build:all
