@@ -25,8 +25,8 @@
   },
   "engineStrict": true,
   "dependencies": {
-    "@polkadot/api": "10.9.1",
-    "@polkadot/api-contract": "10.9.1",
+    "@polkadot/api": "10.10.1",
+    "@polkadot/api-contract": "10.10.1",
     "@polkadot/keyring": "12.3.2",
     "@prosopo/typechain-polkadot-parser": "1.1.8",
     "@types/fs-extra": "^9.0.13",
