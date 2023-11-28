@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set +e
-docker compose --file ./docker-compose.substrate-contracts-node.yml up -d
+docker run -p 9944:9944 -p 9933:9933 -p 9615:9615 -p 30333:30333 -v $(pwd)/chain-data:/chain-data --rm -d --name substrate prosopo/substrate-contracts-node:v0.29
 sleep 10
 set -e
 
