@@ -23,7 +23,7 @@ jobs:
               id: npm-cache
               with:
                   path: ${{ steps.npm-cache-dir-path.outputs.dir }}
-                  key: ${{ runner.os }}-npm-${{ hashFiles('**/npm.lock') }}
+                  key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
                   restore-keys: |
                       ${{ runner.os }}-npm-
             - name: npm Install dependencies
