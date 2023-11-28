@@ -1,16 +1,17 @@
 #!/bin/bash
 
 set +e
-substrate-contracts-node --tmp --dev & P1=$!;
+docker compose --file ./docker-compose.substrate-contracts-node.yml up -d
+sleep 10
 set -e
 
 for dir in examples/*; do
   if [ -d "$dir" ]; then
     cd $dir
     echo "Processing $dir"
-    npm
-    npm generate
-    npm start
+    npm i
+    npm run generate
+    npm run start
     cd ../..
   fi
 done

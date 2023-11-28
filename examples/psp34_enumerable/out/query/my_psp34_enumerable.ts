@@ -16,9 +16,9 @@ import DATA_TYPE_DESCRIPTIONS from '../data/my_psp34_enumerable.json';
 
 
 export default class Methods {
-	private __nativeContract : ContractPromise;
-	private __apiPromise: ApiPromise;
-	private __callerAddress : string;
+	readonly __nativeContract : ContractPromise;
+	readonly __apiPromise: ApiPromise;
+	readonly __callerAddress : string;
 
 	constructor(
 		nativeContract : ContractPromise,

@@ -80,7 +80,8 @@ jobs:
                   chown -R root .
                   chmod -R a+rwx .
                   set +e
-                  substrate-contracts-node --tmp --dev & P1=$!;
+                  docker compose --file ./docker-compose.substrate-contracts-node.yml up -d
+                  sleep 10
                   set -e
                   npm run test
                   kill $P1
