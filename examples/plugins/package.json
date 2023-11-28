@@ -1,6 +1,9 @@
 {
 	"name": "plugins-typechain-example",
 	"version": "1.0.0",
+	"publishConfig": {
+		"access": "restricted"
+	},
 	"private": true,
 	"description": "",
 	"main": "index.js",

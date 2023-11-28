@@ -1,6 +1,9 @@
 {
 	"name": "psp34_enumerable",
 	"version": "1.0.0",
+	"publishConfig": {
+		"access": "restricted"
+	},
 	"private": true,
 	"description": "",
 	"main": "index.js",

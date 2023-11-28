@@ -11,7 +11,7 @@
 	"scripts": {
 		"start-typechain": "npx @prosopo/typechain-polkadot --in ./artifacts --out ./out",
 		"build:all": "npm run --workspaces --if-present build",
-		"publish:dry-run": "npm -w @prosopo/typechain-polkadot -w @prosopo/typechain-polkadot-parser -w @prosopo/typechain-types -w @prosopo/typechain-compiler publish --dry-run",
+		"publish:dry-run": "npm --workspaces publish --dry-run",
 		"publish": "npm -w @prosopo/typechain-polkadot -w @prosopo/typechain-polkadot-parser -w @prosopo/typechain-types -w @prosopo/typechain-compiler publish --access=public",
 		"gen-test-ts": "npx @prosopo/typechain-polkadot --in tests/artifacts --out tests/generated",
 		"only-test": "npx jest --no-cache --maxWorkers 1",
