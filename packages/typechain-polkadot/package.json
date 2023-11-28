@@ -1,6 +1,6 @@
 {
   "name": "@prosopo/typechain-polkadot",
-  "version": "1.1.10",
+  "version": "1.1.13",
   "publishConfig": {
     "access": "public"
   },
@@ -10,9 +10,7 @@
     "lint": "eslint \"{src,tests}/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"{src,tests}/**/*.{js,jsx,ts,tsx}\""
   },
-  "bin": {
-    "typechain-polkadot": "bin/index.js"
-  },
+  "bin": "bin/index.js",
   "files": [
     "index.ts",
     "src",
@@ -25,10 +23,10 @@
   },
   "engineStrict": true,
   "dependencies": {
-    "@polkadot/api": "10.10.1",
-    "@polkadot/api-contract": "10.10.1",
-    "@polkadot/keyring": "12.3.2",
-    "@prosopo/typechain-polkadot-parser": "1.1.10",
+    "@polkadot/api": "10.11.1",
+    "@polkadot/api-contract": "10.11.1",
+    "@polkadot/keyring": "12.6.1",
+    "@prosopo/typechain-polkadot-parser": "1.1.13",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.11.18",
     "@types/yargs": "^17.0.10",

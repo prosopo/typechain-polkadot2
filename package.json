@@ -9,9 +9,9 @@
 	"private": true,
 	"scripts": {
 		"start-typechain": "npx @prosopo/typechain-polkadot --in ./artifacts --out ./out",
-        "build:all": "npm run --workspaces --if-present build",
-        "publish:dry-run": "npm --workspaces publish --dry-run",
-        "publish": "npm --workspaces publish --access=public",
+		"build:all": "npm run --workspaces --if-present build",
+		"publish:dry-run": "npm --workspaces publish --dry-run",
+		"publish": "npm --workspaces publish --access=public",
 		"gen-test-ts": "npx @prosopo/typechain-polkadot --in tests/artifacts --out tests/generated",
 		"only-test": "npx jest --no-cache --maxWorkers 1",
 		"test": "yarn gen-test-ts && yarn only-test",
@@ -35,9 +35,11 @@
 		"tslib": "^2.6.2"
 	},
 	"resolutions": {
-		"@polkadot/util": "12.2.2"
+		"@polkadot/util": "12.6.1"
 	},
 	"devDependencies": {
+		"@types/node": "^20.10.0",
 		"typescript": "^5.2.2"
-	}
+	},
+	"packageManager": "yarn@1.22.19"
 }
