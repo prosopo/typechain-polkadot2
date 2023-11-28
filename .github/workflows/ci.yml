@@ -7,9 +7,6 @@ on:
 jobs:
     examples-builds:
         runs-on: ubuntu-latest
-        container:
-            image: ghcr.io/brushfam/typechain-polkadot-ci
-            options: --user root
         strategy:
             matrix:
                 node-version: [18.x]
@@ -40,9 +37,6 @@ jobs:
     eslint:
         needs: examples-builds
         runs-on: ubuntu-latest
-        container:
-            image: ghcr.io/brushfam/typechain-polkadot-ci
-            options: --user root
         steps:
             - uses: actions/checkout@v3
             - name: Setup node
@@ -63,9 +57,6 @@ jobs:
             group: integration-tests-${{ github.ref }}
             cancel-in-progress: true
         runs-on: ubuntu-latest
-        container:
-            image: ghcr.io/brushfam/typechain-polkadot-ci
-            options: --user root
         steps:
             - uses: actions/checkout@v3
             - name: Setup node
