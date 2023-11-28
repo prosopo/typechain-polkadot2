@@ -8,13 +8,13 @@
     "start": "ts-node index.ts"
   },
   "dependencies": {
-    "@prosopo/typechain-polkadot": "1.0.3",
-	"@prosopo/typechain-types": "1.0.1",
+    "@prosopo/typechain-polkadot": "1.1.13",
+	"@prosopo/typechain-types": "1.1.13",
     "@types/node": "^18.8.0",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.4",
-    "@polkadot/api": "^10.8.1",
-    "@polkadot/api-contract": "^10.8.1",
+    "typescript": "^5.2.2",
+    "@polkadot/api": "10.11.1",
+    "@polkadot/api-contract": "10.11.1",
     "@types/bn.js": "^5.1.0"
   },
   "author": "Supercolony-net",

@@ -1,13 +1,11 @@
 {
   "name": "@prosopo/typechain-compiler",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "publishConfig": {
     "access": "public"
   },
   "description": "Util to test and compile your rust project",
-  "bin": {
-    "typechain-compiler": "bin/index.js"
-  },
+  "bin": "bin/index.js",
   "scripts": {
     "build": "npx tsc",
     "start": "ts-node ./index.ts --config config.json"
@@ -23,8 +21,8 @@
     "tsconfig.json"
   ],
   "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=7.0.0"
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   },
   "engineStrict": true,
   "author": "Prosopo",
@@ -34,7 +32,7 @@
   },
   "homepage": "https://github.com/prosopo/typechain-polkadot#readme",
   "dependencies": {
-    "@prosopo/typechain-polkadot": "1.1.10",
+    "@prosopo/typechain-polkadot": "1.1.13",
     "@types/consola": "^2.2.5",
     "@types/yargs": "^17.0.10",
     "chalk": "^4.1.0",

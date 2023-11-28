@@ -9,15 +9,15 @@ import type * as ArgumentTypes from '../types-arguments/my_psp22';
 import type BN from 'bn.js';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import type { EventRecord } from '@polkadot/types/interfaces'
+import type { EventRecord } from '@polkadot/types/interfaces';
 import {decodeEvents} from "../shared/utils";
 import EVENT_DATA_TYPE_DESCRIPTIONS from '../event-data/my_psp22.json';
 
 
 export default class Methods {
-	private __nativeContract : ContractPromise;
-	private __keyringPair : KeyringPair;
-	private __apiPromise: ApiPromise;
+	readonly __nativeContract : ContractPromise;
+	readonly __keyringPair : KeyringPair;
+	readonly __apiPromise: ApiPromise;
 
 	constructor(
 		apiPromise: ApiPromise,

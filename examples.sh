@@ -1,18 +1,17 @@
 #!/bin/bash
 
 set +e
-substrate-contracts-node --tmp --dev & P1=$!;
+docker run -p 9944:9944 -p 9933:9933 -p 9615:9615 -p 30333:30333 -v $(pwd)/chain-data:/chain-data --rm -d --name substrate prosopo/substrate-contracts-node:v0.29
+sleep 10
 set -e
 
 for dir in examples/*; do
   if [ -d "$dir" ]; then
     cd $dir
     echo "Processing $dir"
-    yarn
-    yarn generate
-    yarn start
+    npm i
+    npm run generate
+    npm run start
     cd ../..
   fi
 done
-
-kill $P1
