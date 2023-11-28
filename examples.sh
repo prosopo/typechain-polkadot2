@@ -8,9 +8,9 @@ for dir in examples/*; do
   if [ -d "$dir" ]; then
     cd $dir
     echo "Processing $dir"
-    yarn
-    yarn generate
-    yarn start
+    npm
+    npm generate
+    npm start
     cd ../..
   fi
 done

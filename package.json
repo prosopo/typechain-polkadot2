@@ -1,7 +1,8 @@
 {
 	"name": "typechain-workspace",
 	"workspaces": [
-		"packages/*"
+		"packages/*",
+		"examples/*"
 	],
 	"files": [
 		"tests/**/*"
@@ -14,7 +15,7 @@
 		"publish": "npm --workspaces publish --access=public",
 		"gen-test-ts": "npx @prosopo/typechain-polkadot --in tests/artifacts --out tests/generated",
 		"only-test": "npx jest --no-cache --maxWorkers 1",
-		"test": "yarn gen-test-ts && yarn only-test",
+		"test": "npm run gen-test-ts && npm run only-test",
 		"lint": "eslint \"{packages, examples}/**/*.ts\"",
 		"lint:fix": "eslint --fix \"{packages, examples}/**/*.ts\""
 	},
@@ -34,12 +35,8 @@
 		"ts-jest": "^28.0.0",
 		"tslib": "^2.6.2"
 	},
-	"resolutions": {
-		"@polkadot/util": "12.6.1"
-	},
 	"devDependencies": {
 		"@types/node": "^20.10.0",
 		"typescript": "^5.2.2"
-	},
-	"packageManager": "yarn@1.22.19"
+	}
 }

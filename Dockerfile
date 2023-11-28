@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get install protobuf-compiler -y
 
 RUN npm install -g n && \
-    npm install -g yarn && \
+    npm install -g npm && \
     n stable
 
 RUN curl -sSf https://sh.rustup.rs/ | sh -s -- --default-toolchain nightly -y
