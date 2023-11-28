@@ -69,5 +69,4 @@ jobs:
                   sleep 10
                   set -e
                   npm run test
-                  kill $P1
               timeout-minutes: 3
