@@ -37,7 +37,7 @@ Also you can override the config value via CLI arguments.
 To compile your project, and generate TS definitions & runtime code for it, run the following command:
 
 ```bash
-npx @prosopo/typechain-compiler --config path/to/config.json
+npx typechain-compiler --config path/to/config.json
 ```
 
 Also you can provide additional arguments to the compiler:

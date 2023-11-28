@@ -28,7 +28,7 @@ Typechain can be used in two ways:
 After installing the package, you can use it as a CLI tool. To use it, run the following command:
 
 ```bash
-npx @prosopo/typechain-polkadot --input path/to/abis --output path/to/output
+npx typechain-polkadot --input path/to/abis --output path/to/output
 ```
 
 ## Methods and namespaces used in the typechain, and their description
@@ -244,7 +244,7 @@ typechain.loadPlugins(new MyPlugin());
 Or you can load them via cli:
 
 ```bash
-npx @prosopo/typechain-polkadot --input path/to/abis --output path/to/output --plugins ./plugins-directory
+npx typechain-polkadot --input path/to/abis --output path/to/output --plugins ./plugins-directory
 ```
 > Note: if you're using the cli, every plugin should end with `.plugin.ts` and have default export of the plugin itself.
 
