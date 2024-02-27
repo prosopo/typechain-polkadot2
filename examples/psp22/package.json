@@ -8,8 +8,8 @@
 		"start": "ts-node index.ts"
 	},
 	"dependencies": {
-		"@prosopo/typechain-polkadot": "1.1.13",
-		"@prosopo/typechain-types": "1.1.13",
+		"@prosopo/typechain-polkadot": "1.1.14",
+		"@prosopo/typechain-types": "1.1.14",
 		"@types/node": "^18.8.0",
 		"ts-node": "^10.7.0",
 		"typescript": "^5.2.2",
