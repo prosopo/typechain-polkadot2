@@ -15,7 +15,7 @@ npm i @prosopo/typechain-polkadot
 Pass the folder with artifacts(in the example it is `artifacts`) as input argument
 and the output folder(in the example it is `typed_contracts`):
 ```bash
-npx @prosopo/typechain-polkadot --in artifacts --out typed_contracts
+npx typechain-polkadot --in artifacts --out typed_contracts
 ```
 
 Import the contract what you want to use(in the example it is [`my_psp22`](https://github.com/727-Ventures/openbrush-contracts/tree/main/examples/psp22)):

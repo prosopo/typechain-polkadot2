@@ -1,6 +1,10 @@
 {
 	"name": "psp22",
 	"version": "1.0.0",
+	"publishConfig": {
+		"access": "restricted"
+	},
+	"private": true,
 	"description": "",
 	"main": "index.js",
 	"scripts": {

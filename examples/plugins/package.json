@@ -1,11 +1,15 @@
 {
 	"name": "plugins-typechain-example",
 	"version": "1.0.0",
+	"publishConfig": {
+		"access": "restricted"
+	},
+	"private": true,
 	"description": "",
 	"main": "index.js",
 	"scripts": {
 		"generate": "echo No generate script",
-		"start": "npx @prosopo/typechain-polkadot --plugins ./plugins --input ./artifacts --output ./output"
+		"start": "npx typechain-polkadot --plugins ./plugins --input ./artifacts --output ./output"
 	},
 	"dependencies": {
 		"@prosopo/typechain-polkadot": "1.1.13",

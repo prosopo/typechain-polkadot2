@@ -10,7 +10,9 @@
     "lint": "eslint \"{src,tests}/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"{src,tests}/**/*.{js,jsx,ts,tsx}\""
   },
-  "bin": "bin/index.js",
+  "bin": {
+    "typechain-polkadot": "bin/index.js"
+  },
   "files": [
     "index.ts",
     "src",

@@ -5,7 +5,9 @@
     "access": "public"
   },
   "description": "Util to test and compile your rust project",
-  "bin": "bin/index.js",
+  "bin": {
+    "typechain-compiler": "bin/index.js"
+  },
   "scripts": {
     "build": "npx tsc",
     "start": "ts-node ./index.ts --config config.json"

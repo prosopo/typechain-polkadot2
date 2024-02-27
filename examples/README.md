@@ -20,7 +20,7 @@ This directory contains examples of parsed contracts and pieces of advice how to
 ```
 - Run typechain with
 ```bash
-npx @prosopo/typechain-polkadot --in path/to/artifacts --out path/to/output
+npx typechain-polkadot --in path/to/artifacts --out path/to/output
 ```
 
 > Note: you should move metadata.json to artifacts directory and rename it to <contract-name>.json, also if you want to deploy the contract you should also move <contract-name>.contract to artifacts directory from your target dir

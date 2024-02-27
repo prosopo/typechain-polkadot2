@@ -9,11 +9,11 @@
 	],
 	"private": true,
 	"scripts": {
-		"start-typechain": "npx @prosopo/typechain-polkadot --in ./artifacts --out ./out",
+		"start-typechain": "npx typechain-polkadot --in ./artifacts --out ./out",
 		"build:all": "npm run --workspaces --if-present build",
 		"publish:dry-run": "npm --workspaces publish --dry-run",
 		"publish": "npm --workspaces publish --access=public",
-		"gen-test-ts": "npx @prosopo/typechain-polkadot --in tests/artifacts --out tests/generated",
+		"gen-test-ts": "npx typechain-polkadot --in tests/artifacts --out tests/generated",
 		"only-test": "npx jest --no-cache --maxWorkers 1",
 		"test": "npm run gen-test-ts && npm run only-test",
 		"lint": "eslint \"{packages, examples}/**/*.ts\"",

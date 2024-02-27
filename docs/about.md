@@ -166,7 +166,7 @@ And install it with `npm install`.
 
 7) Now, let's run `typechain-compiler`:
 ```bash
-$ npx @prosopo/typechain-compiler --config typechain.config.json
+$ npx typechain-compiler --config typechain.config.json
 ```
 
 8) And now, you can use generated code in your project. For example, you can create a file `index.ts`:
@@ -406,7 +406,7 @@ $ cp ./contracts/psp22/target/ink/metadata.json artifacts/psp22.json
 
 5) Let's run `typechain-polkadot`:
 ```bash
-$ npx @prosopo/typechain-polkadot --in ./artifacts --out ./typechain-generated
+$ npx typechain-polkadot --in ./artifacts --out ./typechain-generated
 ```
 
 Wow! We've just generated code for our contracts using typechain directly! 🎉

@@ -34,7 +34,7 @@
  *  # Usage from CLI
  *  ```bash
  *     $ npm i @prosopo/typechain-polkadot
- *     $ npx @prosopo/typechain-polkadot --in path/to/abis --out path/to/output/folder
+ *     $ npx typechain-polkadot --in path/to/abis --out path/to/output/folder
  *  ```
  *
  *  @packageDocumentation
