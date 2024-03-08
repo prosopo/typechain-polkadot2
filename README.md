@@ -1,17 +1,3 @@
-<div align="center">
-  <a href="https://patron.works/">
-    <img src="https://github.com/Brushfam/patron-backend/raw/master/Patron.png" alt="Logo"  >
-  </a>
-
-  <p align="left">
-    &#128226; &#128226; &#128226; We are thrilled to announce <a href="https://patron.works/">Patron</a>, which brings smart contract verification functionality to the Polkadot ecosystem. &#128226; &#128226; &#128226;
-  </p>
-</div>
-
-> Smart contract verification ensures the security, reliability, and trustworthiness of dApps and blockchain platforms. With [Patron](https://patron.works/), you can simplify the deployment flow, manage your builds and make the Polkadot ecosystem more secure and transparent.
-<br/>
-So, in other words,  <a href="https://patron.works/">Patron</a> is an all-in-one contracts platform, which allows you to build and verify ink! smart contracts inside of an isolated environment, explore contract verification details.
-
 ![Typechain](https://user-images.githubusercontent.com/88630083/218826097-0d3d4f61-a028-45a9-a91d-1f245c4663ea.png)
 
 ![GitHub](https://img.shields.io/github/license/727-ventures/typechain-polkadot)
