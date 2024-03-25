@@ -13,8 +13,8 @@ This directory contains examples of parsed contracts and pieces of advice how to
 	"@types/node": "^17.0.34",
 	"ts-node": "^10.7.0",
 	"typescript": "^4.6.4",
-	"@polkadot/api": "10.9.1",
-	"@polkadot/api-contract": "10.9.1",
+	"@polkadot/api": "10.12.1",
+	"@polkadot/api-contract": "10.12.1",
 	"@types/bn.js": "^5.1.0"
 }
 ```

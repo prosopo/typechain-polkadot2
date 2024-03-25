@@ -2,7 +2,7 @@
 This library generates TypeScript types from an `ink!`-based smart contract.
 
 # NOTE
-This library is a modified version of 727-venture's typechain-polkadot library. Our team at prosopo is currently in the process of revamping the library to incorporate bug fixes, updates from polkadot libraries, and various improvements. Both the 727-venture and Brushfam iterations of this library seem to be in a state of disrepair, which prompted us to take it over. It's important to note that, at present, generating TypeScript code from a contract is functional, but only through the command line. The functionality of calling via JavaScript and the plugin system is currently flawed. We plan to address and rectify these issues in the near future.
+This library is a modified version of 727-venture's typechain-polkadot library. Our team at prosopo is currently in the process of revamping the library to incorporate bug fixes, updates from polkadot libraries, and various improvements.
 
 ### Installation & import
 
