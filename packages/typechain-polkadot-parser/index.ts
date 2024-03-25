@@ -42,14 +42,14 @@ import {
 import {PortableType} from "@polkadot/types/interfaces/metadata/types";
 import {Vec} from "@polkadot/types-codec/base/Vec";
 import {TypeInfo, TypeTS} from "./src/types/TypeInfo";
-import {ContractEventSpecV2} from "@polkadot/types/interfaces/contractsAbi/types";
+import {ContractEventSpecV2, ContractEventSpecV3} from "@polkadot/types/interfaces/contractsAbi/types";
 import camelcase from "camelcase";
 
 export class TypeParser {
 	readonly tsTypes: Array<TypeInfo> = [];
 	readonly tsEventTypes: Array<TypeInfo> = [];
 	private abiTypes: Vec<PortableType>;
-	private eventTypes: Vec<ContractEventSpecV2>;
+	private eventTypes: Vec<ContractEventSpecV2> | Vec<ContractEventSpecV3>;
 
 	/**
 	 * @constructor

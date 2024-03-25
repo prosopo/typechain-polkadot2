@@ -1,6 +1,6 @@
 {
   "name": "@prosopo/typechain-polkadot",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "publishConfig": {
     "access": "public"
   },
@@ -26,7 +26,7 @@
     "@polkadot/api": "10.12.2",
     "@polkadot/api-contract": "10.12.2",
     "@polkadot/keyring": "12.6.2",
-    "@prosopo/typechain-polkadot-parser": "1.1.14",
+    "@prosopo/typechain-polkadot-parser": "1.1.15",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.11.18",
     "@types/yargs": "^17.0.10",
