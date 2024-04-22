@@ -18,7 +18,7 @@ type SignAndSendSuccessResponse = {
         [index: string]: any;
     };
 };
-export type { SignAndSendSuccessResponse };
+export type { SignAndSendSuccessResponse, };
 export declare function txSignAndSend(nativeAPI: ApiPromise, nativeContract: ContractPromise, signer: KeyringPair | string, title: string, eventHandler: (event: EventRecord[]) => {
     [index: string]: any;
 }, args?: readonly RequestArgumentType[], gasLimitAndValue?: GasLimitAndValue): Promise<SignAndSendSuccessResponse>;

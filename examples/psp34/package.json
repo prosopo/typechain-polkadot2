@@ -13,8 +13,8 @@
     "@types/node": "^18.8.0",
     "ts-node": "^10.7.0",
     "typescript": "^5.2.2",
-    "@polkadot/api": "10.12.2",
-    "@polkadot/api-contract": "10.12.2",
+    "@polkadot/api": "10.13.1",
+    "@polkadot/api-contract": "10.13.1",
     "@types/bn.js": "^5.1.1"
   },
   "author": "Supercolony-net",

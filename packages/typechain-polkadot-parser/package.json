@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/prosopo/typechain-polkadot#readme",
   "dependencies": {
-    "@polkadot/api": "10.12.2",
-    "@polkadot/api-contract": "10.12.2",
+    "@polkadot/api": "10.13.1",
+    "@polkadot/api-contract": "10.13.1",
     "@types/bn.js": "^5.1.0",
     "@types/node": "^18.0.3",
     "camelcase": "^6.3.0",
