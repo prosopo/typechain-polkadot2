@@ -55,7 +55,7 @@ type SignAndSendSuccessResponse = {
 };
 
 export type {
-	SignAndSendSuccessResponse
+	SignAndSendSuccessResponse,
 };
 
 export async function txSignAndSend(

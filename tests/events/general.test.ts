@@ -52,7 +52,7 @@ describe("Events", () => {
 			}
 		];
 
-		contract.events.subscribeOnTransferEvent((event) => {
+		await contract.events.subscribeOnTransferEvent((event) => {
 			expect(event).toMatchObject(eventsToBeSent[eventsCount]!);
 
 			eventsCount++;

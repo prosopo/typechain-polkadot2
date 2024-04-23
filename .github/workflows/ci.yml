@@ -65,7 +65,7 @@ jobs:
             - name: Run Test Jest
               run: |
                   set +e
-                  docker run -p 9944:9944 -p 9933:9933 -p 9615:9615 -p 30333:30333 -v $(pwd)/chain-data:/chain-data --rm -d --name substrate prosopo/substrate-contracts-node:v0.29
+                  docker run -p 9944:9944 -p 9933:9933 -p 9615:9615 -p 30333:30333 -v $(pwd)/chain-data:/chain-data --rm -d --name substrate prosopo/substrate-contracts-node:v0.35
                   sleep 10
                   set -e
                   npm run test
