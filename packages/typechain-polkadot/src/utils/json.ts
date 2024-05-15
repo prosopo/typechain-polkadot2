@@ -3,5 +3,5 @@
  * @param json - JSON string
  */
 export function minimizeJson(json: string): string {
-	return JSON.stringify(JSON.parse(json));
+	return JSON.stringify(JSON.parse(json)).replace(/\\n/g, "");
 }
