@@ -27,13 +27,7 @@ export function decodeEvents(events: any[], contract: ContractPromise, types: an
 			_event[event.args[i]!.name] = args[i]!.toJSON();
 		}
 
-		// extract event identifier (ContractName::MethodName::EventName -> EventName)
-		
-		const splittedEvent = event.identifier.toString().split("::");
-		const length = splittedEvent.length;
-		const name = splittedEvent[length - 1] ?? event.identifier.toString();
-
-		handleEventReturn(_event, getEventTypeDescription(name, types));
+		handleEventReturn(_event, getEventTypeDescription(event.identifier.toString(), types));
 
 		return {
 			name: event.identifier.toString(),

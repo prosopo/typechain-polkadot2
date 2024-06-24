@@ -1,0 +1,22 @@
+{
+	"name": "flipper",
+	"version": "1.0.0",
+	"description": "examples of flipper with typechain-polkadot",
+	"main": "index.js",
+	"scripts": {
+		"generate": "npx typechain-polkadot --in ./artifacts --out ./out",
+		"start": "ts-node index.ts"
+	},
+	"dependencies": {
+		"@prosopo/typechain-polkadot": "1.1.15",
+		"@prosopo/typechain-types": "1.1.15",
+		"@types/node": "^18.8.0",
+		"ts-node": "^10.7.0",
+		"typescript": "^5.2.2",
+		"@polkadot/api": "10.13.1",
+		"@polkadot/api-contract": "10.13.1",
+		"@types/bn.js": "^5.1.0"
+	},
+	"author": "",
+	"license": "ISC"
+}
