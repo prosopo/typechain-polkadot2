@@ -63,7 +63,7 @@ export class TypeParser {
 		this.eventTypes = abi.metadata.spec.events;
 
 
-		this.tsTypes = this.abiTypes.map((_, i) => {
+		this.tsTypes = this.abiTypes.map((t, i) => {
 			// check if type is using anywhere in the ABI
 			let isUsed = false;
 
@@ -122,7 +122,8 @@ export class TypeParser {
 						break;
 					default:
 						break;
-				}});
+				}
+			});
 
 			abi.metadata.spec.events.forEach((event) => {
 				event.args.forEach((arg) => {
@@ -131,6 +132,18 @@ export class TypeParser {
 					}
 				});
 			});
+
+			// type can be identified by it's path, e.g. ink_storage::lazy::mapping::Mapping
+			const typePath = t.type.path.join('::');
+			// the list of types to ignore
+			const ignoredTypes = [
+				'ink_storage::lazy::mapping::Mapping', // wrapper for mapping in the contract storage
+				'ink_storage::lazy::Lazy' // wrapper type for lazy loaded values in the contract storage
+			];
+			// if the type is an ignored type, mark it as unused
+			if(ignoredTypes.includes(typePath)) {
+				isUsed = false;
+			}
 
 			if (isUsed) return this.generateType(i);
 			else return TypeInfo.EMPTY_TYPE_INFO;
