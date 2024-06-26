@@ -4,12 +4,12 @@ import type { ApiPromise } from '@polkadot/api';
 import { Abi } from '@polkadot/api-contract';
 import type { KeyringPair } from '@polkadot/keyring/types';
 import { ContractPromise } from '@polkadot/api-contract';
-import { ContractAbi } from '../contract-info/{{{fileName}}}';
-import QueryMethods from '../query/{{{fileName}}}';
-import BuildExtrinsicMethods from '../build-extrinsic/{{{fileName}}}';
-import TxSignAndSendMethods from '../tx-sign-and-send/{{{fileName}}}';
-import MixedMethods from '../mixed-methods/{{{fileName}}}';
-import EventsClass from '../events/{{{fileName}}}';
+import { ContractAbi } from '../contract-info/{{{fileName}}}{{{jsExt}}}';
+import QueryMethods from '../query/{{{fileName}}}{{{jsExt}}}';
+import BuildExtrinsicMethods from '../build-extrinsic/{{{fileName}}}{{{jsExt}}}';
+import TxSignAndSendMethods from '../tx-sign-and-send/{{{fileName}}}{{{jsExt}}}';
+import MixedMethods from '../mixed-methods/{{{fileName}}}{{{jsExt}}}';
+import EventsClass from '../events/{{{fileName}}}{{{jsExt}}}';
 {{#if additionalImports.length}}
 {{#each additionalImports}}
 import { {{#each values}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}} } from '{{{path}}}';
