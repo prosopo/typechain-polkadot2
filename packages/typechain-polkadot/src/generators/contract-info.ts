@@ -48,6 +48,6 @@ export default class ContractInfoPlugin implements TypechainPlugin {
 
 	name: string = "ContractInfoPlugin";
 	outputDir: string = "contract-info";
-    options = {}
+	options = {};
 
 }

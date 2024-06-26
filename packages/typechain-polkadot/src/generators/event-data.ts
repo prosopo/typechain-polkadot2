@@ -33,14 +33,14 @@ export default class EventDataPlugin implements TypechainPlugin {
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
 		const parser = new TypeParser(abi);
 
-        writeFileSync(
-            absPathToOutput,
-            `event-data/${fileName}.json`,
-            generateForMetaTemplate({...this.options, tsTypes: parser.tsEventTypes})
-        );
+		writeFileSync(
+			absPathToOutput,
+			`event-data/${fileName}.json`,
+			generateForMetaTemplate({...this.options, tsTypes: parser.tsEventTypes})
+		);
 	}
 
 	name: string = "EventDataPlugin";
 	outputDir: string = "event-data";
-    options = {}
+	options = {};
 }

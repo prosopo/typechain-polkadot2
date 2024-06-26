@@ -33,79 +33,79 @@ const generateForMetaTemplate = Handlebars.compile(readTemplate("mixed-methods")
 export default class MixedMethodsPlugin implements TypechainPlugin {
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
 		
-        const parser = new TypeParser(abi);
+		const parser = new TypeParser(abi);
 
-        const __allArgs = abi.messages.map(m => m.args).flat();
-        const __uniqueArgs : typeof __allArgs = [];
-        for(const __arg of __allArgs)
-            if(!__uniqueArgs.find(__a => __a.type.lookupIndex === __arg.type.lookupIndex))
-                __uniqueArgs.push(__arg);
+		const __allArgs = abi.messages.map(m => m.args).flat();
+		const __uniqueArgs : typeof __allArgs = [];
+		for(const __arg of __allArgs)
+			if(!__uniqueArgs.find(__a => __a.type.lookupIndex === __arg.type.lookupIndex))
+				__uniqueArgs.push(__arg);
 
-        const _argsTypes = __uniqueArgs.map(a => ({
-            id: a.type.lookupIndex!,
-            tsStr: parser.getType(a.type.lookupIndex as number).tsArgTypePrefixed,
-        }));
+		const _argsTypes = __uniqueArgs.map(a => ({
+			id: a.type.lookupIndex!,
+			tsStr: parser.getType(a.type.lookupIndex as number).tsArgTypePrefixed,
+		}));
 
-        let _methodsNames = abi.messages.map((m, i) => {
-            return {
-                original: m.identifier,
-                cut: m.identifier.split("::").pop()!,
-            };
-        });
+		let _methodsNames = abi.messages.map((m, i) => {
+			return {
+				original: m.identifier,
+				cut: m.identifier.split("::").pop()!,
+			};
+		});
 
-        _methodsNames = _methodsNames.map((m) => {
-            const _overloadsCount = _methodsNames.filter(__m => __m.cut === m.cut).length;
-            if(_overloadsCount > 1) {
-                return {
-                    original: m.original,
-                    cut: m.original,
-                };
-            } else {
-                return m;
-            }
-        });
+		_methodsNames = _methodsNames.map((m) => {
+			const _overloadsCount = _methodsNames.filter(__m => __m.cut === m.cut).length;
+			if(_overloadsCount > 1) {
+				return {
+					original: m.original,
+					cut: m.original,
+				};
+			} else {
+				return m;
+			}
+		});
 
-        const imports: Import[] = [];
-        const methods: Method[] = [];
+		const imports: Import[] = [];
+		const methods: Method[] = [];
 
-        for(const __message of abi.messages) {
-            const _methodName = _methodsNames.find(__m => __m.original === __message.identifier)!;
-            if(__message.isMutating) {
-                methods.push({
-                    name: _methodName.cut,
-                    originalName: _methodName.original,
-                    args: __message.args.map(__a => ({
-                        name: __a.name,
-                        type: _argsTypes.find(_a => _a.id === __a.type.lookupIndex)!,
-                    })),
-                    payable: __message.isPayable,
-                    methodType: 'tx',
-                });
-            }
-            else {
-                methods.push({
-                    name: _methodName.cut,
-                    originalName: _methodName.original,
-                    args: __message.args.map(__a => ({
-                        name: __a.name,
-                        type: _argsTypes.find(_a => _a.id === __a.type.lookupIndex)!,
-                    })),
-                    returnType: __message.returnType && {
-                        tsStr: parser.getType(__message.returnType!.lookupIndex as number).tsReturnTypePrefixed,
-                        id: __message.returnType!.lookupIndex!,
-                    },
-                    payable: __message.isPayable,
-                    mutating: __message.isMutating,
-                    methodType: 'query',
-                    resultQuery: getTypeName(abi, __message) === 'Result',
-                });
-            }
-        }
+		for(const __message of abi.messages) {
+			const _methodName = _methodsNames.find(__m => __m.original === __message.identifier)!;
+			if(__message.isMutating) {
+				methods.push({
+					name: _methodName.cut,
+					originalName: _methodName.original,
+					args: __message.args.map(__a => ({
+						name: __a.name,
+						type: _argsTypes.find(_a => _a.id === __a.type.lookupIndex)!,
+					})),
+					payable: __message.isPayable,
+					methodType: 'tx',
+				});
+			}
+			else {
+				methods.push({
+					name: _methodName.cut,
+					originalName: _methodName.original,
+					args: __message.args.map(__a => ({
+						name: __a.name,
+						type: _argsTypes.find(_a => _a.id === __a.type.lookupIndex)!,
+					})),
+					returnType: __message.returnType && {
+						tsStr: parser.getType(__message.returnType!.lookupIndex as number).tsReturnTypePrefixed,
+						id: __message.returnType!.lookupIndex!,
+					},
+					payable: __message.isPayable,
+					mutating: __message.isMutating,
+					methodType: 'query',
+					resultQuery: getTypeName(abi, __message) === 'Result',
+				});
+			}
+		}
 
-        writeFileSync(absPathToOutput, `mixed-methods/${fileName}.ts`, generateForMetaTemplate({...this.options, fileName, methods, additionalImports: imports}));
+		writeFileSync(absPathToOutput, `mixed-methods/${fileName}.ts`, generateForMetaTemplate({...this.options, fileName, methods, additionalImports: imports}));
 	}
 
 	name: string = "MixedMethodsPlugin";
 	outputDir: string = "mixed-methods";
-    options = {}
+	options = {};
 }

@@ -41,18 +41,18 @@ function generate(abi: Abi, fileName: string, absPathToOutput: string) {
 
 export default class EventsPlugin {
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
-        const parser = new TypeParser(abi);
+		const parser = new TypeParser(abi);
 
-        const events: PolkadotEvent[] = parser.tsEventTypes.map((event) => {
-            return {
-                name: event.tsReturnType,
-            };
-        });
+		const events: PolkadotEvent[] = parser.tsEventTypes.map((event) => {
+			return {
+				name: event.tsReturnType,
+			};
+		});
 
-        writeFileSync(absPathToOutput, `events/${fileName}.ts`, generateForMetaTemplate({...this.options, fileName, events}));
+		writeFileSync(absPathToOutput, `events/${fileName}.ts`, generateForMetaTemplate({...this.options, fileName, events}));
 	}
 
 	name: string = "EventsPlugin";
 	outputDir: string = "events";
-    options = {}
+	options = {};
 }

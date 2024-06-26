@@ -33,15 +33,15 @@ const generateForMetaTemplate = Handlebars.compile(readTemplate("types-arguments
 export default class TypesArgumentsPlugin implements TypechainPlugin {
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
 		
-        const parser = new TypeParser(abi);
-        writeFileSync(
-            absPathToOutput,
-            `types-arguments/${fileName}.ts`,
-            generateForMetaTemplate({...this.options, tsTypes: parser.tsTypes, additionalImports: []})
-        );
+		const parser = new TypeParser(abi);
+		writeFileSync(
+			absPathToOutput,
+			`types-arguments/${fileName}.ts`,
+			generateForMetaTemplate({...this.options, tsTypes: parser.tsTypes, additionalImports: []})
+		);
 	}
 
 	name: string = "TypesArgumentsPlugin";
 	outputDir: string = "types-arguments";
-    options = {}
+	options = {};
 }

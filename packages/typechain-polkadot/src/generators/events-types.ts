@@ -34,14 +34,14 @@ export default class EventTypesPlugin {
 
 	    const parser = new TypeParser(abi);
 
-        writeFileSync(
-            absPathToOutput,
-            `event-types/${fileName}.ts`,
-            generateForMetaTemplate({...this.options, fileName, tsTypes: parser.tsEventTypes, additionalImports: []})
-        );
+		writeFileSync(
+			absPathToOutput,
+			`event-types/${fileName}.ts`,
+			generateForMetaTemplate({...this.options, fileName, tsTypes: parser.tsEventTypes, additionalImports: []})
+		);
 	}
 
 	name: string = "EventTypesPlugin";
 	outputDir: string = "event-types";
-    options = {}
+	options = {};
 }

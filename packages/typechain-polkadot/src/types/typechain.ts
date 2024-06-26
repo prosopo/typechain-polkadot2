@@ -31,13 +31,13 @@ export default class TypechainPolkadot {
 	async run(
 		absPathToABIs: string,
 		absPathToOutput: string,
-        options: object
+		options: object
 	) {
 		generateProjectStructure(absPathToOutput);
 
 		for (const plugin of this.plugins) {
-            plugin.options = JSON.parse(JSON.stringify(options));
-            console.log('plugin.options', plugin.options)
+			plugin.options = JSON.parse(JSON.stringify(options));
+			console.log('plugin.options', plugin.options);
 
 			if (plugin.beforeRun) {
 				await plugin.beforeRun(

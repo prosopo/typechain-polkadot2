@@ -33,18 +33,18 @@ export default class DataPlugin implements TypechainPlugin {
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
 		const parser = new TypeParser(abi);
 
-        const tsTypes = parser.tsTypes.filter((type) => {
-            return type.tsArgType.length;
-        })
+		const tsTypes = parser.tsTypes.filter((type) => {
+			return type.tsArgType.length;
+		});
 
-        writeFileSync(
-            absPathToOutput,
-            `data/${fileName}.json`,
-            generateForMetaTemplate({...this.options, tsTypes})
-        );
+		writeFileSync(
+			absPathToOutput,
+			`data/${fileName}.json`,
+			generateForMetaTemplate({...this.options, tsTypes})
+		);
 	}
 
 	name: string = "DataPlugin";
 	outputDir: string = "data";
-    options = {}
+	options = {};
 }

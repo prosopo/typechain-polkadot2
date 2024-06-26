@@ -33,15 +33,15 @@ export default class ContractPlugin implements TypechainPlugin {
 
 	name: string = 'ContractPlugin';
 	outputDir: string = 'contracts';
-    options = {}
+	options = {};
 
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
-        const imports: Import[] = [];
-        const relPathFromOutL1toABIs = PathAPI.relative(
-            PathAPI.resolve(absPathToOutput, "contracts"),
-            absPathToABIs
-        );
+		const imports: Import[] = [];
+		const relPathFromOutL1toABIs = PathAPI.relative(
+			PathAPI.resolve(absPathToOutput, "contracts"),
+			absPathToABIs
+		);
 
-        writeFileSync(absPathToOutput, `contracts/${fileName}.ts`, generateForMetaTemplate({...this.options, fileName, abiDirRelPath: relPathFromOutL1toABIs, additionalImports: imports}));
+		writeFileSync(absPathToOutput, `contracts/${fileName}.ts`, generateForMetaTemplate({...this.options, fileName, abiDirRelPath: relPathFromOutL1toABIs, additionalImports: imports}));
 	}
 }

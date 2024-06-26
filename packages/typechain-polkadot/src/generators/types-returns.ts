@@ -33,14 +33,14 @@ export default class TypesReturnsPlugin {
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
 	    const parser = new TypeParser(abi);
 		
-        writeFileSync(
-            absPathToOutput,
-            `types-returns/${fileName}.ts`,
-            generateForMetaTemplate({...this.options, tsTypes: parser.tsTypes, additionalImports: []})
-        );
+		writeFileSync(
+			absPathToOutput,
+			`types-returns/${fileName}.ts`,
+			generateForMetaTemplate({...this.options, tsTypes: parser.tsTypes, additionalImports: []})
+		);
 	}
 
 	name: string = "TypesReturnsPlugin";
 	outputDir: string = "types-returns";
-    options = {}
+	options = {};
 }
