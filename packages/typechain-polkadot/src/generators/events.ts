@@ -28,8 +28,6 @@ import {readTemplate} from "../utils/handlebars-helpers";
 
 const generateForMetaTemplate = Handlebars.compile(readTemplate("events"));
 
-export const FILE = (fileName: string, events: PolkadotEvent[]) => generateForMetaTemplate({fileName, events});
-
 /**
  * generates a mixed-methods file
  *
@@ -38,22 +36,23 @@ export const FILE = (fileName: string, events: PolkadotEvent[]) => generateForMe
  * @param absPathToOutput - The absolute path to the output directory
  */
 function generate(abi: Abi, fileName: string, absPathToOutput: string) {
-	const parser = new TypeParser(abi);
-
-	const events: PolkadotEvent[] = parser.tsEventTypes.map((event) => {
-		return {
-			name: event.tsReturnType,
-		};
-	});
-
-	writeFileSync(absPathToOutput, `events/${fileName}.ts`, FILE(fileName, events));
+	
 }
 
 export default class EventsPlugin {
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
-		generate(abi, fileName, absPathToOutput);
+		const parser = new TypeParser(abi);
+
+		const events: PolkadotEvent[] = parser.tsEventTypes.map((event) => {
+			return {
+				name: event.tsReturnType,
+			};
+		});
+
+		writeFileSync(absPathToOutput, `events/${fileName}.ts`, generateForMetaTemplate({...this.options, fileName, events}));
 	}
 
 	name: string = "EventsPlugin";
 	outputDir: string = "events";
+	options = {};
 }

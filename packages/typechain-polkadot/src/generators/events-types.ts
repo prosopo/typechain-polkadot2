@@ -29,30 +29,19 @@ import {writeFileSync} from "../utils/directories";
 
 const generateForMetaTemplate = Handlebars.compile(readTemplate("event-types"));
 
-export const FILE = (fileName: string, tsTypes : TypeInfo[], additionalImports: Import[]) => generateForMetaTemplate({fileName, tsTypes, additionalImports});
-
-/**
- * generates a types-returns file
- *
- * @param abi - The ABI of the contract
- * @param fileName - The name of the file to write to
- * @param absPathToOutput - The absolute path to the output directory
- */
-function generate(abi: Abi, fileName: string, absPathToOutput: string) {
-	const parser = new TypeParser(abi);
-
-	writeFileSync(
-		absPathToOutput,
-		`event-types/${fileName}.ts`,
-		FILE(fileName, parser.tsEventTypes, [])
-	);
-}
-
 export default class EventTypesPlugin {
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
-		generate(abi, fileName, absPathToOutput);
+
+	    const parser = new TypeParser(abi);
+
+		writeFileSync(
+			absPathToOutput,
+			`event-types/${fileName}.ts`,
+			generateForMetaTemplate({...this.options, fileName, tsTypes: parser.tsEventTypes, additionalImports: []})
+		);
 	}
 
 	name: string = "EventTypesPlugin";
 	outputDir: string = "event-types";
+	options = {};
 }

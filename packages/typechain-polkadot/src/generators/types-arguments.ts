@@ -30,28 +30,18 @@ import {TypechainPlugin} from "../types/interfaces";
 
 const generateForMetaTemplate = Handlebars.compile(readTemplate("types-arguments"));
 
-export const FILE = (tsTypes : TypeInfo[], additionalImports: Import[]) => generateForMetaTemplate({tsTypes, additionalImports});
-/**
- * generates a types-arguments file
- *
- * @param abi - The ABI of the contract
- * @param fileName - The name of the file to write to
- * @param absPathToOutput - The absolute path to the output directory
- */
-function generate(abi: Abi, fileName: string, absPathToOutput: string) {
-	const parser = new TypeParser(abi);
-	writeFileSync(
-		absPathToOutput,
-		`types-arguments/${fileName}.ts`,
-		FILE(parser.tsTypes, [])
-	);
-}
-
 export default class TypesArgumentsPlugin implements TypechainPlugin {
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
-		generate(abi, fileName, absPathToOutput);
+		
+		const parser = new TypeParser(abi);
+		writeFileSync(
+			absPathToOutput,
+			`types-arguments/${fileName}.ts`,
+			generateForMetaTemplate({...this.options, tsTypes: parser.tsTypes, additionalImports: []})
+		);
 	}
 
 	name: string = "TypesArgumentsPlugin";
 	outputDir: string = "types-arguments";
+	options = {};
 }

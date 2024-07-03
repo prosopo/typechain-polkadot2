@@ -29,32 +29,22 @@ import {TypechainPlugin} from "../types/interfaces";
 
 const generateForMetaTemplate = Handlebars.compile(readTemplate("data"));
 
-export const FILE = (tsTypes : TypeInfo[]) => generateForMetaTemplate({tsTypes});
-
-/**
- * generates a data.json file
- *
- * @param abi - The ABI of the contract
- * @param fileName - The name of the file to write to
- * @param absPathToOutput - The absolute path to the output directory
- */
-function generate(abi: Abi, fileName: string, absPathToOutput: string) {
-	const parser = new TypeParser(abi);
-
-	writeFileSync(
-		absPathToOutput,
-		`data/${fileName}.json`,
-		FILE(parser.tsTypes.filter((type) => {
-			return type.tsArgType.length;
-		}))
-	);
-}
-
 export default class DataPlugin implements TypechainPlugin {
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
-		generate(abi, fileName, absPathToOutput);
+		const parser = new TypeParser(abi);
+
+		const tsTypes = parser.tsTypes.filter((type) => {
+			return type.tsArgType.length;
+		});
+
+		writeFileSync(
+			absPathToOutput,
+			`data/${fileName}.json`,
+			generateForMetaTemplate({...this.options, tsTypes})
+		);
 	}
 
 	name: string = "DataPlugin";
 	outputDir: string = "data";
+	options = {};
 }

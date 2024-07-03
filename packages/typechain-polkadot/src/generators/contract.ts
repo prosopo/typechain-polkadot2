@@ -29,40 +29,19 @@ import {TypechainPlugin} from "../types/interfaces";
 
 const generateForMetaTemplate = Handlebars.compile(readTemplate("contract"));
 
-/**
- * Generates file content for contract/<fileName>.ts using Handlebars
- *
- * @param fileName - The name of the file to write to
- * @param abiDirRelPath - The relative path to the ABI directory
- * @param additionalImports - Any additional imports to add to the file
- * @returns {string} Generated file content
- */
-export const FILE = (fileName : string, abiDirRelPath : string, additionalImports: Import[]) => generateForMetaTemplate({fileName, abiDirRelPath, additionalImports});
-
-/**
- * generates a contract file
- *
- * @param abi - The ABI of the contract
- * @param fileName - The name of the file to write to
- * @param absPathToOutput - The absolute path to the output directory
- * @param absPathToABIs - The absolute path to the ABIs directory
- */
-function generate(abi: Abi, fileName: string, absPathToOutput: string, absPathToABIs: string) {
-	const imports: Import[] = [];
-	const relPathFromOutL1toABIs = PathAPI.relative(
-		PathAPI.resolve(absPathToOutput, "contracts"),
-		absPathToABIs
-	);
-
-	writeFileSync(absPathToOutput, `contracts/${fileName}.ts`, FILE(fileName, relPathFromOutL1toABIs, imports));
-}
-
 export default class ContractPlugin implements TypechainPlugin {
 
 	name: string = 'ContractPlugin';
 	outputDir: string = 'contracts';
+	options = {};
 
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
-		generate(abi, fileName, absPathToOutput, absPathToABIs);
+		const imports: Import[] = [];
+		const relPathFromOutL1toABIs = PathAPI.relative(
+			PathAPI.resolve(absPathToOutput, "contracts"),
+			absPathToABIs
+		);
+
+		writeFileSync(absPathToOutput, `contracts/${fileName}.ts`, generateForMetaTemplate({...this.options, fileName, abiDirRelPath: relPathFromOutL1toABIs, additionalImports: imports}));
 	}
 }

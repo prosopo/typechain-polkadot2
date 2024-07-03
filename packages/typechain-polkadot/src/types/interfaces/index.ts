@@ -3,6 +3,7 @@ import {Abi} from "@polkadot/api-contract";
 export interface TypechainPlugin {
 	name: string;
 	outputDir: string;
+    options: object
 	overrides ?: boolean
 	generate: (
 		abi: Abi,

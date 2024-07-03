@@ -29,16 +29,6 @@ import {minimizeJson} from "../utils/json";
 
 const generateForMetaTemplate = Handlebars.compile(readTemplate("contract-info"));
 
-/**
- * Generates file content for contarct-info/<fileName>.ts using Handlebars
- *
- * @param fileName - The name of the file to write to
- * @param abiJson - The abi of the contract in JSON format
- * @param contractJson - The .contract file in JSON format
- */
-export const FILE = (fileName : string, abiJson: string, contractJson: string) => generateForMetaTemplate({fileName, abiJson, contractJson});
-
-
 export default class ContractInfoPlugin implements TypechainPlugin {
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
 		const abiJson = minimizeJson(FsAPI.readFileSync(`${absPathToABIs}/${fileName}.json`, "utf8")).replaceAll("`", '\\`');
@@ -52,11 +42,12 @@ export default class ContractInfoPlugin implements TypechainPlugin {
 		writeFileSync(
 			absPathToOutput,
 			`contract-info/${fileName}.ts`,
-			FILE(fileName, abiJson, contractJson)
+			generateForMetaTemplate({...this.options, fileName, abiJson, contractJson})
 		);
 	}
 
 	name: string = "ContractInfoPlugin";
 	outputDir: string = "contract-info";
+	options = {};
 
 }

@@ -64,6 +64,16 @@ const _argv = YARGS
 		description: 'Plugins directory',
 		type: 'string',
 	})
+	.option('jsExt', {
+		description: 'Use .js extension in imports',
+		type: 'boolean',
+		default: false,
+	})
+	.option('assertJson', {
+		description: 'Use assert JSON in imports',
+		type: 'boolean',
+		default: false,
+	})
 	.help().alias( 'h', 'help')
 	.argv;
 
@@ -95,9 +105,16 @@ async function main() {
 		await typechain.loadPluginsFromFiles(pluginFileNames);
 	}
 
+	const options = {
+		jsExt: argv.jsExt ? '.js' : '',
+		assertJson: argv.assertJson ? " assert { type: 'json' }" : '',
+	};
+	console.log('options', options);
+
 	await typechain.run(
 		PathAPI.resolve(cwdPath, `./${argv.input}`),
-		PathAPI.resolve(cwdPath, `./${argv.output}`)
+		PathAPI.resolve(cwdPath, `./${argv.output}`),
+		options
 	);
 }
 

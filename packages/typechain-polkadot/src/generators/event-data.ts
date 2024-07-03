@@ -29,30 +29,18 @@ import {TypechainPlugin} from "../types/interfaces";
 
 const generateForMetaTemplate = Handlebars.compile(readTemplate("event-data"));
 
-export const FILE = (tsTypes : TypeInfo[]) => generateForMetaTemplate({tsTypes});
-
-/**
- * generates a data.json file
- *
- * @param abi - The ABI of the contract
- * @param fileName - The name of the file to write to
- * @param absPathToOutput - The absolute path to the output directory
- */
-function generate(abi: Abi, fileName: string, absPathToOutput: string) {
-	const parser = new TypeParser(abi);
-
-	writeFileSync(
-		absPathToOutput,
-		`event-data/${fileName}.json`,
-		FILE(parser.tsEventTypes)
-	);
-}
-
 export default class EventDataPlugin implements TypechainPlugin {
 	generate(abi: Abi, fileName: string, absPathToABIs: string, absPathToOutput: string): void {
-		generate(abi, fileName, absPathToOutput);
+		const parser = new TypeParser(abi);
+
+		writeFileSync(
+			absPathToOutput,
+			`event-data/${fileName}.json`,
+			generateForMetaTemplate({...this.options, tsTypes: parser.tsEventTypes})
+		);
 	}
 
 	name: string = "EventDataPlugin";
 	outputDir: string = "event-data";
+	options = {};
 }
